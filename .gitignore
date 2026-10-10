@@ -1,0 +1,23 @@
+# Android Studio / Gradle
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build/
+/app/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.keystore
+*.jks
+
+# Secretos de Supabase / IA
+.env
+supabase/.env
+supabase/functions/**/.env
+
+# Memoria local de agentes
+.claude/agent-memory-local/
