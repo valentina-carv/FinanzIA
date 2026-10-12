@@ -17,6 +17,7 @@ Kotlin · Jetpack Compose · Supabase (Auth + PostgreSQL con RLS) · Edge Functi
 | `CLAUDE.md` | Arquitectura, sistema de diseño, tono de voz y reglas. Léelo antes de programar |
 | `docs/SPEC.md` | Funcionalidades `F-00` a `F-20`, criterios de aceptación y decisiones abiertas |
 | `CONTRIBUTING.md` | Ramas, commits y checklist de PR |
+| `app/`, `gradle/`, `gradlew` | Proyecto Android (Kotlin, Compose) |
 | `design/` | Capturas del prototipo, una carpeta por pantalla |
 | `supabase/` | Esquema del equipo, migración de seguridad y usuarios de prueba |
 | `.claude/agents/` | Agentes de Claude Code: `orquestador`, `desarrollador`, `qa`, `tester-android` |
@@ -41,30 +42,24 @@ Flujo de la app: `Screen (Compose) → ViewModel → Repository → Supabase`.
 
 ## Puesta en marcha (una sola vez)
 
-### 1. Proyecto Android
-Android Studio → *New Project → Empty Activity*: nombre `FinanzIA`, paquete
-`com.finanzia.app`, minSdk 26, Kotlin DSL. Ejecuta ▶ y verifica que abre en el emulador.
-
-### 2. Este contenido en el proyecto
-Copia **todo** el contenido de este repositorio en la raíz del proyecto, al lado
-de `app/` y `settings.gradle.kts`. `.claude`, `.github` y `.gitignore` son ocultos:
-actívalos para verlos antes de copiar.
-
-### 3. GitHub
-Crea un repositorio **vacío y privado** llamado `FinanzIA` (sin README ni
-.gitignore) y súbelo:
+### 1. Abrir el proyecto
+El proyecto Android ya está en el repositorio (paquete `com.finanzia.app`,
+minSdk 26, Kotlin DSL). Clónalo y ábrelo en Android Studio:
 ```
-git init
-git add .
-git status          # local.properties NO debe aparecer
-git commit -m "chore: proyecto base y kit de trabajo (F-00)"
-git branch -M main
-git remote add origin https://github.com/<usuario>/FinanzIA.git
-git push -u origin main
-git switch -c develop && git push -u origin develop
+git clone https://github.com/valentina-carv/FinanzIA.git
+git switch develop
 ```
-En GitHub: *Settings → General → Default branch* = `develop`, y agrega a cada
-integrante en *Settings → Collaborators*. El CI de *Actions* debe salir en verde.
+*File → Open* → la carpeta `FinanzIA`. Espera a que Gradle sincronice y
+ejecuta ▶ en el emulador: debe abrir una pantalla en blanco que dice
+"Hello Android!" (se reemplaza en F-01 y F-03).
+
+### 2. GitHub
+`main` y `develop` ya existen y los PRs van a `develop`. La dueña del repo agrega
+a cada integrante en *Settings → Collaborators*. El CI de *Actions* debe salir en verde.
+
+### 3. `local.properties`
+Android Studio lo crea solo al abrir el proyecto. Nunca se sube a Git; en el
+paso 4 se le agregan las llaves de Supabase.
 
 ### 4. Supabase
 El esquema del equipo ya existe (`supabase/001_esquema_equipo.sql`, solo referencia).

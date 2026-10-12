@@ -15,9 +15,8 @@ UI está en **español**.
 
 ## Equipo
 
-Paula Valentina Carvajal Velásquez, Erick Santiago Esquivel Cruz, Julian Camilo
-Gonzalez Morales, Juan Pablo Moreno González. (Responsables por pantalla: ver
-`docs/SPEC.md`, decisión D-10.)
+Paula Valentina Carvajal Velásquez, Juan y Tatiana
+Mantilla. (Responsables por pantalla: ver `docs/SPEC.md`, decisión D-10.)
 
 ## Principio de trabajo (no negociable)
 
@@ -157,6 +156,8 @@ Reglas duras:
   promesa que la app no cumple), gana `CLAUDE.md` y se reporta como decisión en
   el SPEC.
 - Los textos de ejemplo ("Paula Gómez", "$18,500.00") son datos de muestra.
+- Lo de "cifrado AES-256" que aparece en el prototipo **no se usa**: ningún texto
+  de la app lo menciona (decisión del equipo, D-4 y D-18).
 
 ## Cómo trabajar en este repo
 
