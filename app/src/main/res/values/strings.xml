@@ -1,3 +1,35 @@
 <resources>
-    <string name="app_name">Finanzia</string>
+    <string name="app_name">FinanzIA</string>
+
+    <!-- Logo (D-11): "FINANZIA" con "IA" en verde y ✦ -->
+    <string name="logo_finanz" translatable="false">FINANZ</string>
+    <string name="logo_ia" translatable="false">IA</string>
+    <string name="logo_destello" translatable="false">✦</string>
+    <string name="logo_descripcion">FinanzIA</string>
+    <string name="eslogan">Tu asistente financiero con IA</string>
+
+    <!-- Componentes compartidos -->
+    <string name="mostrar_contrasena">Mostrar contraseña</string>
+    <string name="ocultar_contrasena">Ocultar contraseña</string>
+    <string name="cargando">Cargando</string>
+    <string name="seleccionado">Seleccionado</string>
+    <string name="no_seleccionado">No seleccionado</string>
+
+    <!-- Catálogo provisional del sistema de diseño (F-01). Se reemplaza en F-03. -->
+    <string name="catalogo_titulo">Sistema de diseño</string>
+    <string name="catalogo_descripcion">Así se ven los componentes de FinanzIA. Esta pantalla es provisional.</string>
+    <string name="catalogo_paso">Paso 2 • Gastos</string>
+    <string name="catalogo_campo_correo">Correo electrónico</string>
+    <string name="catalogo_campo_correo_ejemplo">tu@correo.com</string>
+    <string name="catalogo_campo_contrasena">Contraseña</string>
+    <string name="catalogo_error_correo">El correo no es válido. Revisa que esté bien escrito.</string>
+    <string name="catalogo_opcion_titulo">Gastos Fijos</string>
+    <string name="catalogo_opcion_descripcion">Renta, servicios, internet, luz, agua</string>
+    <string name="catalogo_opcion2_titulo">Comida</string>
+    <string name="catalogo_opcion2_descripcion">Supermercado, despensa y restaurantes</string>
+    <string name="catalogo_dato_titulo">Dato de Finanzia:</string>
+    <string name="catalogo_dato_texto">Identificar tus gastos fijos es la clave para saber cuánto dinero libre tienes.</string>
+    <string name="catalogo_boton_principal">Entrar</string>
+    <string name="catalogo_boton_solido">Guardar gasto</string>
+    <string name="catalogo_boton_cargando">Enviando</string>
 </resources>
