@@ -12,7 +12,7 @@
 > Lo marcado como **(propuesta)** debe confirmarlo el equipo en la sección 9
 > antes de implementarlo.
 
-**Versión:** 0.4 · **Última actualización:** 2026-10-12
+**Versión:** 0.4.1 · **Última actualización:** 2026-10-12
 
 ---
 
@@ -308,7 +308,7 @@ reportan al orquestador.
 | D-1 | ¿Supabase o Room/SQLite local? El documento de Ingeniería decía Room | Todo | **Resuelta:** Supabase con el esquema del equipo (9 tablas). Contraseñas en Supabase Auth, no en `usuarios` (migración 002). Room solo si se exige modo offline real (F-17) |
 | D-2 | El documento de contexto pide "confirmar contraseña", el prototipo no tiene ese campo | F-04 | Pendiente. Propuesta: agregar el campo debajo de contraseña |
 | D-3 | Recuperar contraseña pide "Nombre de usuario", pero la app no tiene usuarios, solo correo | F-06 | **(propuesta)** quitar ese campo; Supabase solo necesita el correo |
-| D-4 | "Cuenta creada" promete AES-256, "IA Copilot" con detección de gastos hormiga y un "bono gratis" que la app no tiene | F-05 | **(propuesta)** cambiar por hechos reales: "Cuenta protegida", "FinanzIA lista para aprender de tus movimientos", "Tu primer resumen te espera" |
+| D-4 | "Cuenta creada" promete AES-256, "IA Copilot" con detección de gastos hormiga y un "bono gratis" que la app no tiene | F-05 | **Resuelta en parte:** lo de AES-256 no se usa en ningún texto de la app (decisión del equipo, 2026-10-12). **(propuesta)** para el resto, cambiar por hechos reales: "Cuenta protegida", "FinanzIA lista para aprender de tus movimientos", "Tu primer resumen te espera" |
 | D-5 | ¿Supabase exige confirmar el correo antes de entrar? | F-04, F-05 | **(propuesta)** desactivado durante el desarrollo (el seed ya crea usuarios confirmados) |
 | D-6 | El prototipo muestra `3,200.00`; en Colombia se escribe `$3.200` | F-08, F-09 | **(propuesta)** formato `es-CO`, sin decimales |
 | D-7 | Categorías del onboarding (Gastos Fijos, Comida, Diversión, Transporte) vs. las 11 que se crean por usuario | F-09, F-12 | **(propuesta)** Gastos Fijos→Vivienda, Comida→Alimentación, Diversión→Entretenimiento, Transporte→Transporte |
@@ -321,7 +321,7 @@ reportan al orquestador.
 | D-12 | ¿Hay textos de Términos de Servicio y Política de Privacidad? | F-04 | Pendiente |
 | D-16 | Dos paletas: la del prototipo (verde, azul, coral) y la del documento de contexto (sección 17, con violeta para la IA) | F-01, F-11, F-16 | **(propuesta)** paleta del prototipo + violeta `#7C5CFF` solo para la IA y ámbar para presupuestos cerca del límite (ver `CLAUDE.md`) |
 | D-17 | ¿Qué modelo de IA usa la Edge Function y quién paga la llave? | F-16 | Pendiente |
-| D-18 | El prototipo trae "Acceso autorizado" tras iniciar sesión o cambiar la contraseña, con saldo y "insight" de muestra, "Cifrado AES-256", "grado bancario" y "v3.4.1 (Build 2049)" | F-03, F-06 | **(propuesta)** no usarla en el hito 1 (F-03 va directo al dashboard). Si se usa, solo con datos reales y sin promesas que la app no cumple (igual que D-4) |
+| D-18 | El prototipo trae "Acceso autorizado" tras iniciar sesión o cambiar la contraseña, con saldo y "insight" de muestra, "Cifrado AES-256", "grado bancario" y "v3.4.1 (Build 2049)" | F-03, F-06 | **Resuelta en parte:** "Cifrado AES-256 Activo" no se muestra (decisión del equipo, 2026-10-12). **(propuesta)** no usarla en el hito 1 (F-03 va directo al dashboard). Si se usa, solo con datos reales y sin promesas que la app no cumple (igual que D-4) |
 | D-19 | "Nueva contraseña" pide 4 requisitos (incluye símbolo) y "Cerrar sesión en los demás dispositivos"; el registro (F-04) pide 3. El cambio llega por el enlace de Supabase, que se abre fuera de la app | F-06 | **(propuesta)** mismas 3 reglas que F-04 (una sola `PasswordPolicy`); la pantalla se usa cuando el enlace de recuperación abra la app (deep link), en una fase posterior |
 | D-20 | El dashboard del prototipo tiene barra inferior Inicio · Gráficos · Billetera · Metas · Asistente; `CLAUDE.md` define Inicio · Movimientos · IA · Reportes · Perfil. También muestra datos de muestra (Mercadona, `$12,450.00`, "Cuenta Nómina") y la tarjeta de la IA en verde | F-11 | **(propuesta)** usar la imagen como guía visual (tarjeta de saldo con degradado, tarjeta de la IA, meta, movimientos recientes, botón +) y mantener la barra y la regla del violeta de `CLAUDE.md` |
 | D-21 | El repo de Tatiana usa el paquete `com.finazia.finanzia` (con typo) y su `CLAUDE.md` dice `com.finanzia.finanzia`; este SPEC dice `com.finanzia.app` | F-00 | **Resuelta:** `com.finanzia.app` (el proyecto Android traído del repo de Tatiana se renombró) |
@@ -343,6 +343,7 @@ reportan al orquestador.
 
 | Fecha | Cambio |
 |---|---|
+| 2026-10-12 | v0.4.1: lo de "cifrado AES-256" del prototipo no se usa (D-4, D-18). Equipo: Paula Valentina, Juan Pablo y Tatiana |
 | 2026-10-12 | v0.4: se agrega el proyecto Android (F-00) tomado del repo de Tatiana con el paquete `com.finanzia.app`, 4 referencias nuevas en `/design/` (nueva contraseña, su error, acceso autorizado y dashboard) y las decisiones D-18 a D-22 |
 | 2026-10-10 | v0.3: se detallan F-11 a F-18 con criterios de aceptación a partir del documento de contexto, se agregan F-19 (pruebas) y F-20 (APK), y las decisiones D-16 (paleta) y D-17 (modelo de IA) |
 | 2026-10-09 | v0.2: se adopta el esquema existente del equipo (9 tablas). Migración 002: contraseñas en Supabase Auth, RLS en todas las tablas, trigger de registro, columna `frecuencia`, reglas de datos. 14 pruebas de seguridad pasadas |
