@@ -15,7 +15,7 @@ UI está en **español**.
 
 ## Equipo
 
-Paula Valentina Carvajal Velásquez, Juan Pablo Moreno González y Tatiana
+Paula Valentina Carvajal Velásquez, Juan y Tatiana
 Mantilla. (Responsables por pantalla: ver `docs/SPEC.md`, decisión D-10.)
 
 ## Principio de trabajo (no negociable)

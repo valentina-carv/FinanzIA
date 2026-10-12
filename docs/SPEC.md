@@ -343,7 +343,7 @@ reportan al orquestador.
 
 | Fecha | Cambio |
 |---|---|
-| 2026-10-12 | v0.4.1: lo de "cifrado AES-256" del prototipo no se usa (D-4, D-18). Equipo: Paula Valentina, Juan Pablo y Tatiana |
+| 2026-10-12 | v0.4.1: lo de "cifrado AES-256" del prototipo no se usa (D-4, D-18). Equipo: Paula Valentina, Juan y Tatiana |
 | 2026-10-12 | v0.4: se agrega el proyecto Android (F-00) tomado del repo de Tatiana con el paquete `com.finanzia.app`, 4 referencias nuevas en `/design/` (nueva contraseña, su error, acceso autorizado y dashboard) y las decisiones D-18 a D-22 |
 | 2026-10-10 | v0.3: se detallan F-11 a F-18 con criterios de aceptación a partir del documento de contexto, se agregan F-19 (pruebas) y F-20 (APK), y las decisiones D-16 (paleta) y D-17 (modelo de IA) |
 | 2026-10-09 | v0.2: se adopta el esquema existente del equipo (9 tablas). Migración 002: contraseñas en Supabase Auth, RLS en todas las tablas, trigger de registro, columna `frecuencia`, reglas de datos. 14 pruebas de seguridad pasadas |
